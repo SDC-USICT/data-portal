@@ -22,7 +22,7 @@ app.controller('sub', ['$scope', '$http', function ($scope, $http) {
     $http({
   			method : 'POST',
          headers : {'Content-Type': 'application/x-www-form-urlencoded'} ,
-  			data : JSON.stringify($scope.$final_data),
+  			data : $scope.school,
   			url : "https://api.staticman.net/v2/entry/SDC-USICT/data-portal/master/"
   }).then(function mySucces(response) {
      console.log('sucess')
