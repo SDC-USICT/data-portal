@@ -8,13 +8,76 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
       <link rel="stylesheet" href="https://raw.githubusercontent.com/hemangsk/json_endpoints/master/bootstrap.min.css">
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <script src="app.js"></script>
       <link href="style.css" rel="stylesheet">
    </head>
-   <body>
+   <body ng-app="data">
       <main>
-         <div class="container">
-            <div class="row">
+         <div class="container main-cont"  ng-controller="sub">
+            <div class="card">
+              <div class="heading-card">
+                <div class="heading-info">GENERAL INFORMATION</div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input placeholder="ENTER SCHOOL" ng-model="school.name" type="text" class="validate">
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s4">
+                  <input placeholder="SEMESTER" ng-model="school.sem" type="text" class="validate">
+                </div>
+                <div class="input-field col s4">
+                  <input placeholder="YEAR" ng-model="school.year" type="text" class="validate">
+                </div>
+                <div class="input-field col s4">
+                  <input placeholder="STREAM" ng-model="school.stream" type="text" class="validate">
+                </div>
+              </div>
 
+            </div>
+
+            <div class="card">
+              <div class="heading-card">
+                <div class="heading-info">SUBJECT ALLOCATION</div>
+              </div>
+              <div ng-repeat='subject in subjects'>
+                <div class="small-heading">SUBJECT # {{$index+1}}</div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input ng-model="subject.name" placeholder="SUBJECT NAME" id="first_name" type="text" class="validate">
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s3">
+                  <input placeholder="TEACHER ID" ng-model="subject.teacher_id" type="text" class="validate">
+                </div>
+                <div class="input-field col s3">
+                  <input placeholder="TEACHER NAME" ng-model="subject.teacher_name" type="text" class="validate">
+                </div>
+                <div class="input-field col s3">
+                  <input placeholder="SUBJECT CODE" ng-model="subject.subject_code" type="text" class="validate">
+                </div>
+                <div class="input-field col s3">
+                  <input placeholder="SUBJECT TYPE" ng-model="subject.subject_type" type="text" class="validate">
+                </div>
+              </div>
+            </div>
+            <div class="row center">
+              <a ng-click='add_more_subs()' class="waves-effect btn center">ADD MORE SUBJECTS</a>
+              <br>
+            </div>
+            <br>
+            </div>
+
+            <div class="card">
+
+              <div class="row center">
+                <br>
+                <a ng-click='submit()' class="waves-effect btn center">SUBMIT FORM</a>
+
+              </div>
+              <br>
             </div>
          </div>
 
