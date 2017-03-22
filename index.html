@@ -13,7 +13,7 @@
    </head>
    <body ng-app="data">
       <main   ng-controller="sub">
-        <form ng-submit="submit()">
+        <form method="post" action="https://api.staticman.net/v2/entry/SDC-USICT/data-portal/master/subject_allocation">
          <div class="container main-cont">
             <div class="card">
               <div class="heading-card">
@@ -21,18 +21,18 @@
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input placeholder="ENTER SCHOOL" ng-model="school.name" type="text" class="validate">
+                  <input placeholder="ENTER SCHOOL"  name="fields[name]" ng-model="school.name" type="text" class="validate">
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s4">
-                  <input placeholder="SEMESTER" ng-model="school.sem" type="text" class="validate">
+                  <input placeholder="SEMESTER"  name="fields[sem]" ng-model="school.sem" type="text" class="validate">
                 </div>
                 <div class="input-field col s4">
-                  <input placeholder="YEAR" ng-model="school.year" type="text" class="validate">
+                  <input placeholder="YEAR" ng-model="school.year"  name="fields[year]" type="text" class="validate">
                 </div>
                 <div class="input-field col s4">
-                  <input placeholder="STREAM" ng-model="school.stream" type="text" class="validate">
+                  <input placeholder="STREAM" ng-model="school.stream"  name="fields[stream]" type="text" class="validate">
                 </div>
               </div>
 
@@ -46,21 +46,21 @@
                 <div class="small-heading">SUBJECT # {{$index+1}}</div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input ng-model="subject.name" placeholder="SUBJECT NAME" id="first_name" type="text" class="validate">
+                  <input ng-model="subject.name" name="fields[subject_name_{{$index+1}}]" placeholder="SUBJECT NAME" id="first_name" type="text" class="validate">
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s3">
-                  <input placeholder="TEACHER ID" ng-model="subject.teacher_id" type="text" class="validate">
+                  <input placeholder="TEACHER ID" name="fields[teacher_id_{{$index+1}}]" ng-model="subject.teacher_id" type="text" class="validate">
                 </div>
                 <div class="input-field col s3">
-                  <input placeholder="TEACHER NAME" ng-model="subject.teacher_name" type="text" class="validate">
+                  <input placeholder="TEACHER NAME" name="fields[teacher_name_{{$index+1}}]" ng-model="subject.teacher_name" type="text" class="validate">
                 </div>
                 <div class="input-field col s3">
-                  <input placeholder="SUBJECT CODE" ng-model="subject.subject_code" type="text" class="validate">
+                  <input placeholder="SUBJECT CODE" name="fields[subject_code_{{$index+1}}]" ng-model="subject.subject_code" type="text" class="validate">
                 </div>
                 <div class="input-field col s3">
-                  <input placeholder="SUBJECT TYPE" ng-model="subject.subject_type" type="text" class="validate">
+                  <input placeholder="SUBJECT TYPE" name="fields[subject_type_{{$index+1}}]" ng-model="subject.subject_type" type="text" class="validate">
                 </div>
               </div>
             </div>
