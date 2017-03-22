@@ -12,8 +12,9 @@
       <link href="style.css" rel="stylesheet">
    </head>
    <body ng-app="data">
-      <main>
-         <div class="container main-cont"  ng-controller="sub">
+      <main   ng-controller="sub">
+        <form ng-submit="submit()">
+         <div class="container main-cont">
             <div class="card">
               <div class="heading-card">
                 <div class="heading-info">GENERAL INFORMATION</div>
@@ -74,13 +75,13 @@
 
               <div class="row center">
                 <br>
-                <a ng-click='submit()' class="waves-effect btn center">SUBMIT FORM</a>
+                <button type="submit" class="waves-effect btn center">SUBMIT FORM</button>
 
               </div>
               <br>
             </div>
          </div>
-
+       </form>
       </main>
       <ul id="slide-out" class="side-nav fixed">
          <li>

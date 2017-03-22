@@ -17,11 +17,13 @@ app.controller('sub', ['$scope', '$http', function ($scope, $http) {
       'school_data' : $scope.school,
       'subject_data' : $scope.subjects
     }
+    console.log($scope.$school);
     console.log($scope.final_data);
     $http({
   			method : 'POST',
-  			data : JSON.stringify($scope.final_data),
-  			url : ""
+         headers : {'Content-Type': 'application/x-www-form-urlencoded'} ,
+  			data : ($scope.$final_data),
+  			url : "https://api.staticman.net/v2/entry/SDC-USICT/data-portal/master/"
   }).then(function mySucces(response) {
      console.log('sucess')
      console.log(response);
